@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "project": "SuperClaude_Framework",
+  "lastUpdated": "2025-02-08",
+
+  "metadata": {
+    "name": "SuperClaude_Framework",
+    "description": "Python pytest plugin + CLI tools for AI-powered development workflows",
+    "version": "4.2.0",
+    "license": "MIT",
+    "repository": "https://github.com/yourusername/SuperClaude_Framework"
+  },
+
+  "structure": {
+    "claude": ".claude/",
+    "commands": ".claude/commands/",
+    "src": "src/superclaude/",
+    "tests": "tests/",
+    "docs": "docs/"
+  },
+
+  "python": {
+    "manager": "UV",
+    "rules": "Never use pip or python -m directly",
+    "commands": {
+      "run": "uv run",
+      "test": "uv run pytest",
+      "install": "uv pip install"
+    }
+  },
+
+  "makefile": {
+    "dev": "Install in editable mode with dev dependencies",
+    "verify": "Verify installation (package, plugin, health)",
+    "test": "Run full test suite",
+    "lint": "Run ruff linter",
+    "format": "Format code with ruff",
+    "doctor": "Health check diagnostics",
+    "buildPlugin": "Build plugin artefacts into dist/",
+    "syncPlugin": "Sync artefacts into plugin repo",
+    "clean": "Remove build artifacts"
+  },
+
+  "mcp": {
+    "install": "superclaude mcp",
+    "list": "superclaude mcp --list",
+    "recommended": "airis-mcp-gateway"
+  },
+
+  "modules": {
+    "pytestPlugin": "pytest_plugin.py",
+    "pmAgent": "pm_agent/",
+    "execution": "execution/",
+    "cli": "cli/"
+  },
+
+  "documents": {
+    "planning": "PLANNING.md",
+    "tasks": "TASK.md",
+    "knowledge": "KNOWLEDGE.md",
+    "agents": "AGENTS.md",
+    "changelog": "CHANGELOG.md"
+  },
+
+  "commands": {
+    "pm": "Project management",
+    "research": "Research tasks",
+    "indexRepo": "Repository indexing"
+  },
+
+  "testing": {
+    "framework": "pytest",
+    "markers": ["confidence_check"],
+    "coverage": "uv run pytest --cov=superclaude"
+  },
+
+  "codeQuality": {
+    "linter": "ruff",
+    "formatter": "ruff"
+  },
+
+  "patterns": {
+    "python": "Use UV for all Python operations",
+    "testing": "Pytest with markers",
+    "mcp": "Superclaude MCP gateway"
+  }
+}
